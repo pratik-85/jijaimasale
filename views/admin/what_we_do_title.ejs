@@ -1,0 +1,68 @@
+<%- include("navbar.ejs")%>
+<style>
+    .heading {
+        background-image: linear-gradient(45deg, #44CE42 70%, #f34040 30%);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        color: white;
+    }
+</style>
+<form action="/admin/save_what_we_do_title" method="post">
+    <div class="container bg-white p-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="font-weight-bold text-white heading">Add Title</h2>
+            </div>
+            <div class="col-md-4">
+                <label for="">Title</label>
+                <input type="text" class="form-control border border-dark" name="what_we_do_title">
+            </div>
+            <div class="col-md-4">
+                <label for="">Description</label>
+                <input type="text" class="form-control border border-dark" name="what_we_do_desc">
+            </div>
+            <div class="col-md-4 text-center mt-4">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<div class="container overflow-auto bg-white p-5 mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="heading">What We Do Title Table</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover">
+                    <tr>
+                        <th></th>
+                        <th>SN</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                    </tr>
+                    <% for(var i=0;i<what_we_do_title.length;i++){%>
+                        <tr>
+                            <td>
+                                <a href="/admin/edit_what_we_do_title/<%=what_we_do_title[i].what_we_do_title_id%>">
+                                    <button class="btn btn-success"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                </a>
+                                <a href="/admin/delete_what_we_do_title/<%=what_we_do_title[i].what_we_do_title_id%>">
+                                    <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </a>
+                            </td>
+                            <td><%=i+1%></td>
+                            <td><%=what_we_do_title[i].what_we_do_title%></td>
+                            <td><%=what_we_do_title[i].what_we_do_desc%></td>
+                        </tr>
+                        <%}%>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include("footer.ejs")%>

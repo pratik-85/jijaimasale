@@ -1,0 +1,35 @@
+<%- include("../navbar.ejs") %>
+<div class="container p-5 bg-white shadow mb-5 mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center font-weight-bold">Update You Tube Video</h1>
+        </div>
+    </div>
+</div>
+
+
+<form action="/admin/save_update_yt_videos" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white shadow mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center mb-3">
+                <h3>Update You Tube Videos</h3>
+            </div>
+            <input type="hidden" name="update_yt_vi_id" value="<%= gallary_yt_video.gallary_iframe_videos_id %>">
+            <div class="col-md-6">
+                Enter Video Link
+                <input type="text" value="<%= gallary_yt_video.gallary_video_link %>" name="gallary_video_link" class="form-control border-dark">
+            </div>
+            <div class="col-md-6">
+                Enter Video Description
+                <input type="text" value="<%= gallary_yt_video.gallary_video_desc %>" name="gallary_video_desc" class="form-control border-dark">
+            </div>
+            <div class="col-md-12 text-center mt-4 mb-4">
+                <button class="btn btn-primary">Update video</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+<%- include("../footer.ejs") %>

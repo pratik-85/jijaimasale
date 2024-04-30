@@ -1,0 +1,100 @@
+<%- include("../navbar.ejs")%>
+
+    <style>
+        .heading {
+            background-image: linear-gradient(45deg, #44CE42 70%, #f34040 30%);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            color: white;
+        }
+    </style>
+
+    <form action="./save_about" enctype="multipart/form-data" method="post">
+        <div class="container-fluid p-5 bg-white">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-black font-weight-bold heading">Add About Us</h2>
+                </div>
+                <div class="col-md-6">
+                    about Discription1
+                    <input type="text" name="about_discription1" class="form-control border-dark">
+                </div>
+                <div class="col-md-6">
+                    about Discription2
+                    <input type="text" name="about_discription2" class="form-control border-dark">
+                </div>
+                <div class="col-md-4">
+                    About banner
+                    <input type="file" name="about_banner" class="form-control border-dark">
+                </div>
+                <div class="col-md-4">
+                    About Img1
+                    <input type="file" name="about_img1" class="form-control border-dark">
+                </div>
+                <div class="col-md-4">
+                    About Img2
+                    <input type="file" name="about_img2" class="form-control border-dark">
+                </div>
+                
+                <div class="col-md-12 mt-5 text-center">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="container-fluid p-5 bg-white border mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="heading">About Banner</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                        <tr>
+                            <th></th>
+                            <th>SN</th>
+                            <th>About Banner</th>
+                            <th>About Img1</th>
+                            <th>About Discription1</th>
+                            <th>About Img2</th>
+                            <th>About Discription2</th>
+                        </tr>
+
+                        <% about.forEach((val,i)=>{%>
+
+                            <tr class="text-black">
+                                <td>
+                                    <a href="/admin/about/edit_about/<%=val.about_id%>">
+                                        <button class="btn btn-success">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </a>
+                                    <a href="/admin/about/delete_about/<%=val.about_id%>">
+                                        <button onclick="return confirm('are you sure')" class="btn btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <%= i+1%>
+                                </td>
+                                <td><img src="/encoded_img/<%=val.about_banner%>" width="100px" class="rounded-0" alt=""></td>
+                                <td><img src="/encoded_img/<%=val.about_img1%>" width="100px" class="rounded-0" alt=""></td>
+                                <td>
+                                    <%=val.about_discription1%>
+                                </td>
+                                <td><img src="/encoded_img/<%=val.about_img2%>" class="rounded-0" width="100px" alt=""></td>
+                                <td>
+                                    <%=val.about_discription2%>
+                                </td>
+                            </tr>
+                            <%}) %>
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include("../footer.ejs")%>

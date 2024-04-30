@@ -1,0 +1,111 @@
+<%- include("navbar.ejs")%>
+<style>
+    .heading {
+        background-image: linear-gradient(45deg, #44CE42 70%, #f34040 30%);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        color: white;
+    }
+</style>
+
+<form action="/admin/save_why_we_are_best_choice" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-white heading">Add Why We Are Best Choice</h2>
+            </div>
+            <div class="col-md-4">
+                <label for="">Title 1</label>
+                <input type="text" name="why_we_best_choice_title1" class="form-control border-dark">
+            </div>
+            <div class="col-md-4">
+                <label for="">Title 2</label>
+                <input type="text" name="why_we_best_choice_title2" class="form-control border-dark">
+            </div>
+            <div class="col-md-4">
+                <label for="">Description</label>
+                <input type="text" name="why_we_best_choice_desc" class="form-control border-dark">
+            </div>
+            <div class="col-md-2">
+                <label for="">Feature 1</label>
+                <input type="text" name="why_we_best_choice_feature1" class="form-control border-dark">
+            </div>
+            <div class="col-md-2">
+                <label for="">Feature 2</label>
+                <input type="text" name="why_we_best_choice_feature2" class="form-control border-dark">
+            </div>
+            <div class="col-md-2">
+                <label for="">Feature 3</label>
+                <input type="text" name="why_we_best_choice_feature3" class="form-control border-dark">
+            </div>
+            <div class="col-md-2">
+                <label for="">Feature 4</label>
+                <input type="text" name="why_we_best_choice_feature4" class="form-control border-dark">
+            </div>
+            <div class="col-md-2">
+                <label for="">Feature 5</label>
+                <input type="text" name="why_we_best_choice_feature5" class="form-control border-dark">
+            </div>
+            <div class="col-md-2">
+                <label for="">Image</label>
+                <input type="file" name="why_we_best_choice_image" class="form-control border-dark">
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="container overflow-auto mt-5 p-5 bg-white">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="heading">Best Choice Table</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover">
+                    <tr>
+                        <th></th>
+                        <th>SN</th>
+                        <th>Title1</th>
+                        <th>Title2</th>
+                        <th>Description</th>
+                        <th>Feature 1</th>
+                        <th>Feature 2</th>
+                        <th>Feature 3</th>
+                        <th>Feature 4</th>
+                        <th>Feature 5</th>
+                        <th>Image</th>
+                    </tr>
+                    <% for(var i=0;i<why_we_are_best_choice.length;i++){%>
+                        <tr>
+                            <td>
+                                <a href="/admin/edit_why_we_are_best_choice/<%=why_we_are_best_choice[i].why_we_are_best_choice_id%>">
+                                    <button class="btn btn-success"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                </a>
+                                <a href="/admin/delete_why_we_are_best_choice/<%=why_we_are_best_choice[i].why_we_are_best_choice_id%>">
+                                    <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </a>
+                            </td>
+                            <td><%=i+1%></td>
+                            <td><%=why_we_are_best_choice[i].why_we_best_choice_title1%></td>
+                            <td><%=why_we_are_best_choice[i].why_we_best_choice_title2%></td>
+                            <td><%=why_we_are_best_choice[i].why_we_best_choice_desc%></td>
+                            <td><%=why_we_are_best_choice[i].why_we_best_choice_feature1%></td>
+                            <td><%=why_we_are_best_choice[i].why_we_best_choice_feature2%></td>
+                            <td><%=why_we_are_best_choice[i].why_we_best_choice_feature3%></td>
+                            <td><%=why_we_are_best_choice[i].why_we_best_choice_feature4%></td>
+                            <td><%=why_we_are_best_choice[i].why_we_best_choice_feature5%></td>
+                            <td>
+                                <img src="/encoded_img/<%=why_we_are_best_choice[i].why_we_best_choice_image%>" alt="" class="img-fluid rounded-0">
+                            </td>
+                        </tr>
+                        <%}%>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include("footer.ejs")%>

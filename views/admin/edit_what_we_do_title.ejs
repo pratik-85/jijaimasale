@@ -1,0 +1,34 @@
+<%- include("navbar.ejs")%>
+<style>
+    .heading {
+        background-image: linear-gradient(45deg, #44CE42 70%, #f34040 30%);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        color: white;
+    }
+</style>
+
+<form action="/admin/update_what_we_do_title" method="post">
+    <div class="container bg-white p-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="font-weight-bold text-dark heading">Edit What We Do Title</h1>
+            </div>
+            <input type="hidden" name="what_we_do_title_id" value="<%=edit_what_we_do_title[0].what_we_do_title_id%>">
+            <div class="col-md-4">
+                <label for="">Title</label>
+                <input type="text" class="form-control border border-dark" name="what_we_do_title" value="<%=edit_what_we_do_title[0].what_we_do_title%>">
+            </div>
+            <div class="col-md-4">
+                <label for="">Description</label>
+                <input type="text" class="form-control border border-dark" name="what_we_do_desc" value="<%=edit_what_we_do_title[0].what_we_do_desc%>">
+            </div>
+            <div class="col-md-4 text-center mt-4">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%- include("footer.ejs")%>

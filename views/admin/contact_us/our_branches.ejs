@@ -1,0 +1,170 @@
+<%- include("../navbar.ejs") %>
+
+    <style>
+        .heading {
+            background-image: linear-gradient(45deg, #44CE42 70%, #f34040 30%);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            color: white;
+        }
+    </style>
+
+
+    <div class="container mt-4 p-5 shadow bg-white mb-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="font-weight-bold heading">Customer List</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th></th>
+                            <th>SN</th>
+                            <th>CUSTOMER NAME</th>
+                            <th>EMAIL</th>
+                            <th>MOBILE</th>
+                            <th>STATE</th>
+                            <th>REQUIREMENTS</th>
+                        </tr>
+                        <% for(var i=0;i<user_requirment_list.length;i++) {%>
+                            <tr>
+                                <td>
+                                    <a href="/admin/delete_customer/<%=  user_requirment_list[i].user_contact_us_id %>"><button
+                                            onclick="return confirm('are you sure')" class="btn btn-danger"><i
+                                                class="fa fa-trash"></i></button></a>
+                                </td>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= user_requirment_list[i].user_name %>
+                                </td>
+                                <td>
+                                    <%= user_requirment_list[i].user_mobile %>
+                                </td>
+                                <td>
+                                    <%= user_requirment_list[i].user_email %>
+                                </td>
+                                <td>
+                                    <%= user_requirment_list[i].select_stat%>
+                                </td>
+                                <td>
+                                    <%= user_requirment_list[i].user_requirment %>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form action="/admin/save_our_branches" method="post" enctype="multipart/form-data">
+        <div class="container p-5 bg-white shadow mb-5">
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <h2 class="font-weight-bold heading">Our Branches</h2>
+                </div>
+                <div class="col-md-6">
+                    Enter Shop Place
+                    <input type="text" name="shop_place" class="form-control border-dark">
+                </div>
+                <div class="col-md-6">
+                    Enter Shop Name
+                    <input type="text" name="shop_name" class="form-control border-dark">
+                </div>
+                <div class="col-md-6 mt-4">
+                    Enter Mobile No
+                    <input type="text" name="shop_mobile_no" class="form-control border-dark">
+                </div>
+                <div class="col-md-6 mt-4">
+                    Enter Email Id
+                    <input type="email" name="shop_email" class="form-control border-dark">
+                </div>
+                <div class="col-md-12 mt-4">
+                    Enter Address
+                    <textarea name="shop_address" class="form-control border-dark"></textarea>
+                </div>
+                <div class="col-md-12 text-center mt-5">
+                    <button class="btn btn-primary">Save Branch</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="container mt-4 p-5 shadow bg-white">
+        <div class="row">
+            <div class="col-md-12 mb-4 ">
+                <h2 class="heading">Branches List</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped">
+                        <tr>
+                            <th></th>
+                            <th>SN</th>
+                            <th>Shop Place</th>
+                            <th>Shop Name</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                        </tr>
+                        <% for(var i=0;i<our_branches_list.length;i++) { %>
+                            <tr>
+                                <td>
+                                    <a href="/admin/delete_our_branch/<%= our_branches_list[i].our_branches_id %>"><button
+                                            onclick="return confirm('are you sure')" class="btn btn-danger"><i
+                                                class="fa fa-trash p-1"></i></button></a>
+
+                                    <a href="/admin/edit_our_branch/<%= our_branches_list[i].our_branches_id %>"><button
+                                            class="btn btn-warning"><i class="fa fa-pencil p-1"></i></button></a>
+
+                                </td>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= our_branches_list[i].shop_place %>
+                                </td>
+                                <td>
+                                    <%= our_branches_list[i].shop_name %>
+                                </td>
+                                <td>
+                                    <%= our_branches_list[i].shop_mobile_no %>
+                                </td>
+                                <td>
+                                    <%= our_branches_list[i].shop_email %>
+                                </td>
+                                <td>
+                                    <%= our_branches_list[i].shop_address %>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- </form> -->
+    </div>
+
+    <form action="/admin/save_contact_ud_google_map_link" method="post">
+        <div class="container mt-4 p-5 shadow bg-white">
+            <div class="row">
+                <div class="col-md-12 mb-4 ">
+                    <h2 class="heading">Google Map Link</h2>
+                </div>
+                <div class="col-md-9">
+                    Enter Google Map Link
+                    <input type="text" name="google_map_link" class="form-control border-dark">
+                </div>
+                <div class="col-md-3 mt-4 text-center">
+                    <button class="btn btn-primary">Save Google Map</button>
+                </div>
+                <div class="col-md-12 mt-4">
+                    <iframe src="<%= contact_us_google_map.google_map_link %>" width="100%" height="300"
+                        style="border: 2px solid black" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <%- include("../footer.ejs") %>

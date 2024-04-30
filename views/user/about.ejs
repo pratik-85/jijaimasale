@@ -1,0 +1,100 @@
+<%- include("navbar.ejs")%>
+
+<section>
+  <% for(var i=0;i<about_us.length;i++){%>
+    <div class="container about-section">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="mt-5 mb-5 text-center alert alert-success">About Us</h2>
+          <div class="about-img text-center">
+            <img
+              src="/encoded_img/<%=about_us[i].about_banner%>"
+              alt="About Us"
+              class="img-fluid mb-5"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <%}%>
+
+    <!-- Director's Message Section -->
+    <div class="container next-section">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="name_d text-center"><h3>Director's Message</h3></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Founder Section -->
+  <% for(var i=0;i<about_us.length;i++){%>
+    <div class="container founder-section mt-5 shadow mb-5">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="founder-card mt-4">
+            <img
+              src="/encoded_img/<%=about_us[i].about_img1%>"
+              alt="Founder Image"
+              class="founder-img img-fluid"
+            />
+            <h5 class="text-center">Founder</h5>
+            <h2 class="text-center">Mr. Babasaheb Garje</h2>
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <div class="story-section">
+            <p class="font-family p-2 text-justify">
+              <%=about_us[i].about_discription1%>
+            </p>
+            <p class="font-family p-2 text-justify">
+              <%=about_us[i].about_discription2%>
+            </p>
+            <!-- <p class="font-family p-2 text-justify">
+              I realized that if you want to do something in life, you have no
+              choice but to work hard. But everyone wanted to get a job after
+              completing their education. But I was adamant about not doing
+              the job. But if you want to do / do business, you need capital,
+              if you look at the situation at home, you would not get capital.
+              So I decided that what I really needed to do was learn how to do
+              it right.
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <%}%>
+
+
+    <!-- Story Section -->
+  </section>
+
+  <% for(var i=0;i<about_us.length;i++){%>
+  <div class="container shadow story-section pt-5 pb-5 mb-4">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="story-section">
+          <p class="font-family p-2 text-justify">
+            <%=about_us[i].about_discription2%>
+          </p>
+          <p class="font-family p-2 text-justify">
+            <%=about_us[i].about_discription1%>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="founder-card">
+          <img
+            src="/encoded_img/<%=about_us[i].about_img2%>"
+            alt="Founder Image"
+            class="founder-img img-fluid"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <%}%>
+
+
+<%- include("footer.ejs")%>

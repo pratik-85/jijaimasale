@@ -1,0 +1,53 @@
+<%- include("../navbar.ejs")%>
+<style>
+    .heading {
+        background-image: linear-gradient(45deg, #44CE42 70%, #f34040 30%);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        color: white;
+    }
+</style>
+<form action="./update_about" enctype="multipart/form-data" method="post">
+    <div class="container-fluid p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-white font-weight-bold heading">Edit About Us</h1>
+            </div>
+            <div class="col-md-4">
+               About Banner
+                <input type="file" name="about_banner" class="form-control border border-dark"  value="<%=about[0].about_banner%>">
+                <img src="/encoded_img/<%=about[0].about_banner%>" width="100px" height="70px">
+
+                <input type="hidden" name="about_id" class="form-control border border-dark" value="<%=about[0].about_id%>">
+            </div>
+        
+           
+            <div class="col-md-4">
+                About Img1
+                <input type="file" name="about_img1" class="form-control border border-dark"  value="<%=about[0].about_img1%>">
+                <img src="/encoded_img/<%=about[0].about_img1%>" width="100px" height="70px">
+             </div>
+             <div class="col-md-4">
+                About Img2
+                <input type="file" name="about_img2" class="form-control border border-dark"  value="<%=about[0].about_img2%>">
+                <img src="/encoded_img/<%=about[0].about_img2%>" width="100px" height="70px">
+             </div>
+             <div class="col-md-6">
+                About Discription1
+                <input type="text"  name="about_discription1" class="form-control border border-dark"  value="<%=about[0].about_discription1%>">
+             </div>
+
+             <div class="col-md-6">
+                About Discription2
+                <input type="text"  name="about_discription2" class="form-control border border-dark"  value="<%=about[0].about_discription2%>">
+             </div>
+            <div class="col-md-12 mt-5 text-center">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+       
+           
+        </div>
+    </div>
+</form>
+<%- include("../footer.ejs")%>

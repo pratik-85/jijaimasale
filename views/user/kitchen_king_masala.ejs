@@ -1,0 +1,82 @@
+<%- include("navbar.ejs")%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 p-0">
+            <h2 class="alert alert-success font-weight-bold p-4 text-center">Kitchen King Masala</h2>
+        </div>
+    </div>
+</div>
+
+<% for(var i=0;i<kitchen_king.length;i++){%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mt-4 border shadow p-0 mb-4">
+        <img
+          src="/images/<%=kitchen_king[i].banner_img%>"
+          class="img-fluid"
+          style="height: auto"
+        />
+      </div>
+    </div>
+  </div>
+  <%}%>
+
+<% for(var i=0;i<kitchen_king.length;i++){%>
+  <section>
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-md-3">
+          <img
+            src="/images/<%=kitchen_king[i].img1%>"
+            class="w-100 mt-5 h-40"
+          />
+          <img
+            src="/images/<%=kitchen_king[i].img2%>"
+            class="img-fluid mt-5 w-100"
+          />
+        </div>
+        <div class="col-md-8 ml-3 mt-5">
+          <h4 class="text-danger font-weight-bold"><%=kitchen_king[i].heading1%></h4>
+          <p class="font-weight-bold mt-3">
+            <%=kitchen_king[i].description1%>
+          </p>
+
+          <h4 class="text-danger font-weight-bold mt-2">
+            <%=kitchen_king[i].heading2%>
+          </h4>
+          <% for(var i=0;i<description.length;i++){%>
+            <p class="font-weight-bold mt-3"><%=description[i].description%></p>
+        <%}%>
+        <% for(var i=0;i<kitchen_king.length;i++){%>
+          <h4 class="text-danger font-weight-bold"><%=kitchen_king[i].heading2%></h4>
+          <%}%>
+          <div class="d-flex">
+            <% for(var i=0;i<quantitydata.length;i++){%>
+              <span class="ml-4 font-weight-bold">
+                  <%=quantitydata[i].quantity%>
+              </span>
+              <%}%>
+          </div>
+
+        <% for(var i=0;i<kitchen_king.length;i++){%>
+          <h4 class="text-danger font-weight-bold mt-4">
+            <%=kitchen_king[i].heading5%>
+          </h4>
+
+          <img
+            src="/images/<%=kitchen_king[i].img4%>"
+            class="w-100 mt-4"
+            style="height: 300px"
+          />
+          <%}%>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%}%>
+
+
+
+<%- include("footer.ejs")%>

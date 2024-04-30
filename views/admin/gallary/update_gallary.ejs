@@ -1,0 +1,40 @@
+<%- include("../navbar.ejs")%>
+<style>
+    .heading {
+        background-image: linear-gradient(45deg, #44CE42 70%, #f34040 30%);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        color: white;
+    }
+</style>
+
+<form action="/admin/save_update_gallary" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white shadow">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center font-weight-bold heading">Update Gallary Page</h1>
+            </div>
+            <div class="col-md-6">
+                <input type="hidden" name="update_id" value="<%= gallary_images_dataa[0].gallary_imgs_id%>">
+                <div class="col-md-12 mt-5">
+                    Enter Description
+                    <input type="text" value="<%= gallary_images_dataa[0].gallary_desc %>" name="gallary_desc" class="form-control border-dark">
+                </div>
+                <div class="col-md-12 mt-4">
+                    Enter Image
+                    <input type="file" name="gallary_image" class="form-control border-dark">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="/encoded_img/<%= gallary_images_dataa[0].gallary_image %>" width="100%">
+            </div>
+            <div class="col-md-12 text-center mt-4 mb-4">
+                <button class="btn btn-primary">Save Gallay Image</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<%- include("../footer.ejs")%>

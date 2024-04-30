@@ -1,0 +1,132 @@
+<%- include("../../navbar.ejs")%>
+<style>
+    .heading {
+        background-image: linear-gradient(45deg, #44CE42 70%, #f34040 30%);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        color: white;
+    }
+</style>
+<div class="container-fluid p-5 bg-white">
+    <div class="row">
+        <div class="col-md-6 mt-5">
+            <form action="./save_quantity" enctype="multipart/form-data" method="post">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="heading">Add Quantity</h2>
+                        </div>
+                        <div class="col-md-8">
+                            Quantity
+                            <input type="text" name="quantity" class="form-control border-dark">
+                        </div>
+                        <div class="col-md-4 mt-4 text-center">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="container bg-white">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="heading">Quantity Table</h2>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover">
+                                <tr>
+                                    <th>ACTION</th>
+                                    <th>SR.NO</th>
+                                    <th>Quantity</th>
+                                </tr>
+            
+                                <% quantitydata.forEach((val,i)=>{%>
+                                    <tr class="text-black">
+                                        <td>
+                                            <a href="/admin/products/Quantity&Specification/edit_quantity/<%=val.quantity_id %>">
+                                                <button class="btn btn-success">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                            </a>
+                                            <a href="/admin/products/Quantity&Specification/delete_quantity/<%=val.quantity_id %>">
+                                                <button onclick="return confirm('are you sure')" class="btn btn-danger">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <%= i+1%>
+                                        </td>
+                                        <td>
+                                            <%=val.quantity%>
+                                        </td>
+                                    </tr>
+                                    <%}) %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-5">
+            <form action="./save_specification" enctype="multipart/form-data" method="post">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="heading">Add Specification</h2>
+                        </div>
+                        <div class="col-md-8">
+                            Specifications
+                            <input type="text" name="specification" class="form-control border-dark">
+                        </div>
+                        <div class="col-md-4 mt-4 text-center">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="container bg-white">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="heading">Specification Table</h2>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover">
+                                <tr>
+                                    <th>ACTION</th>
+                                    <th>SR.NO</th>
+                                    <th>specification</th>
+                                </tr>
+                                <% specificationdata.forEach((val,i)=>{%>
+            
+                                    <tr class="text-black">
+                                        <td>
+                                            <a href="/admin/products/Quantity&Specification/edit_specification/<%=val.specification_id %>">
+                                                <button class="btn btn-success">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                            </a>
+                                            <a href="/admin/products/Quantity&Specification/delete_specification/<%=val.specification_id %>">
+                                                <button onclick="return confirm('are you sure')" class="btn btn-danger">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <%= i+1%>
+                                        </td>
+                                        <td>
+                                            <%=val.specification%>
+                                        </td>
+                                    </tr>
+                                    <%}) %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<%- include("../../footer.ejs")%>

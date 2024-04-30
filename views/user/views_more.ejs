@@ -1,0 +1,40 @@
+<%- include("navbar.ejs")%>
+<style>
+  .views_more_card{
+    height: 430px;
+  }
+  /* @media(min-width:667px){
+    .views_more_card{
+      height: 700px;
+    }
+  } */
+  /* @media(max-width:949px){
+    .views_more_card{
+      height: 300px;
+    }
+  } */
+</style>
+
+<div class="container mb-4">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center">Our Products</h1>
+      </div>
+      <% for(var i=0;i<views_more.length;i++){%>
+      <div class="col-md-4 mt-3">
+        <div class="card views_more_card">
+          <div class="card-header">
+            <img src="/images/<%=views_more[i].img1%>" class="img-fluid" alt="" />
+          </div>
+          <div class="card-body">
+            <h3 class="text-center"><%=views_more[i].heading1%></h3>
+          </div>
+        </div>
+      </div>
+      <%}%>
+    </div>
+  </div>
+
+
+
+<%- include("footer.ejs")%>

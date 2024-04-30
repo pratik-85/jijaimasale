@@ -1,0 +1,153 @@
+<%- include("../../navbar.ejs")%>
+<style>
+    .heading {
+        background-image: linear-gradient(45deg, #44CE42 70%, #f34040 30%);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        color: white;
+    }
+</style>
+
+    <!-- <div class="container p-2 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center font-weight-bold">Turmeric Products</h2>
+            </div>
+        </div>
+    </div>
+    <br> -->
+
+    <form action="./save_turmeric_products" enctype="multipart/form-data" method="post">
+        <div class="container-fluid p-5 bg-white">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading font-weight-bold">Add Turmeric Info</h2>
+                </div>
+                <div class="col-md-2 mt-1">
+                    Heading1
+                    <input type="text" name="heading1" class="form-control border-dark">
+                </div>
+                <div class="col-md-2 mt-1">
+                    Heading2
+                    <input type="text" name="heading2" class="form-control border-dark">
+                </div>
+                <div class="col-md-2 mt-1">
+                    Heading3
+                    <input type="text" name="heading3" class="form-control border-dark">
+                </div>
+                <div class="col-md-3 mt-1">
+                    Heading4
+                    <input type="text" name="heading4" class="form-control border-dark">
+                </div>
+                <div class="col-md-3 mt-1">
+                    Heading5
+                    <input type="text" name="heading5" class="form-control border-dark">
+                </div>
+                <div class="col-md-12 mt-1">
+                    Discription1
+                    <input type="text" name="description1" class="form-control border-dark">
+                </div>
+                <div class="col-md-4 mt-1">
+                    Banner Img
+                    <input type="file" name="banner_img" class="form-control border-dark">
+                </div>
+                <div class="col-md-4 mt-1">
+                    About Img1
+                    <input type="file" name="img1" class="form-control border-dark">
+                </div>
+                <div class="col-md-4 mt-1">
+                    About Img2
+                    <input type="file" name="img2" class="form-control border-dark">
+                </div>
+                <!-- <div class="col-md-6 mt-1">
+                  
+                </div> -->
+                <div class="col-md-6 mt-1">
+                    About Img3
+                    <input type="file" name="img3" class="form-control border-dark">
+                </div>
+                <div class="col-md-6 mt-1">
+                    About Img4
+                    <input type="file" name="img4" class="form-control border-dark">
+                </div>
+                <div class="col-md-12 mt-5 text-center">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+        <br>
+        <div class="container-fluid p-3 p-lg-5 bg-white border">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="heading">Turmeric Powder Table</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <tr>
+                                <th>ACTION</th>
+                                <th>SR.NO</th>
+                                <th>Banner Img</th>
+                                <th>About Img1</th>
+                                <th>About Img2</th>
+                                <th>Heading1</th>
+                                <th>Discription1</th>
+                                <th>Heading2</th>
+                                <th>Heading3</th>
+                                <th>Heading4</th>
+                                <th>Heading5</th>
+                                <th>About Img3</th>
+                                <th>About Img4</th>
+                            </tr>
+
+                            <% data.forEach((val,i)=>{%>
+
+                                <tr class="text-black">
+                                    <td>
+                                        <a href="/admin/products/Turmeric_Powder/edit_products/<%=val.turmeric_products_id%>">
+                                            <button class="btn btn-success">
+                                                <i class="fa fa-edit" aria-hidden="true"></i>
+                                            </i>
+                                            </button>
+                                        </a>
+                                        <a href="/admin/products/Turmeric_Powder/delete_products/<%=val.turmeric_products_id%>">
+                                            <button onclick="return confirm('are you sure')" class="btn btn-danger">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <%= i+1%>
+                                    </td>
+                                    <td><img src="/images/<%=val.banner_img%>" class="img-fluid rounded-0"></td>
+                                    <td><img src="/images/<%=val.img1%>" class="img-fluid rounded-0"></td>
+                                    <td><img src="/images/<%=val.img2%>" class="img-fluid rounded-0"></td>
+                                    <td>
+                                        <%=val.heading1%>
+                                    </td>
+                                    <td>
+                                        <%=val.discription1%>
+                                    </td>
+                                    <td>
+                                        <%=val.heading2%>
+                                    </td>
+                                    <td>
+                                        <%=val.heading3%>
+                                    </td>
+                                    <td>
+                                        <%=val.heading4%>
+                                    </td>
+                                    <td>
+                                        <%=val.heading5%>
+                                    </td>
+                                    <td><img src="/images/<%=val.img3%>" class="img-fluid rounded-0" width="100px" alt=""></td>
+                                    <td><img src="/images/<%=val.img4%>" class="img-fluid rounded-0" width="100px" alt=""></td>
+                                </tr>
+                                <%}) %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include("../../footer.ejs")%>

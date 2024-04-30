@@ -1,0 +1,127 @@
+<%- include("navbar.ejs")%>
+
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-md-12 p-0">
+        <h2 class="alert alert-success font-weight-bold p-4 text-center">
+          Turmeric Powder
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <% for(var i=0;i<turmeric_powder.length;i++){%>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="mutih1 text-uppercase"><strong></strong></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <img
+            src="/images/<%=turmeric_powder[i].banner_img%>"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <br /><img
+            src="/images/<%=turmeric_powder[i].img1%>"
+            class="img-fluid"
+            alt=""
+          />
+          <br /><br /><img
+            src="/images/<%=turmeric_powder[i].img2%>"
+            class="img-fluid"
+            alt=""
+          />
+          <br /><br />
+        </div>
+        <div class="col-lg-8">
+          <h2 class="color_red mt-3"><%=turmeric_powder[i].heading1%></h2>
+          <p class="font-family">
+            <b
+              ><%=turmeric_powder[i].description1%></b
+            >
+          </p>
+          <h2 class="color_red">
+            <%=turmeric_powder[i].heading2%>
+          </h2>
+          <!-- <p class="font-weight-bold mt-3">Helps in digestion.</p>
+          <p class="font-weight-bold">Maintain blood pressure levels</p>
+          <p class="font-weight-bold">Anti Inflammetry</p>
+          <p class="font-weight-bold">Helps in weight loss</p>
+          <p class="font-weight-bold">Improve cognitive function</p>
+          <p class="font-weight-bold">Improve heart health</p>
+          <p class="font-weight-bold">Helps in vessel congestion</p> -->
+          <% for(var i=0;i<description.length;i++){%>
+            <p class="font-weight-bold mt-3"><%=description[i].description%></p>
+            <%}%>
+      <% for(var i=0;i<turmeric_powder.length;i++){%>
+          <h2 class="color_red">
+            <%=turmeric_powder[i].heading3%>
+          </h2>
+          <%}%>
+          <p style="font-size: 16px">
+            <b>
+              <ul>
+                <% for(var i=0;i<specificationdata.length;i++){%>
+                  <li>
+                      <p class="font-family"><%=specificationdata[i].specification%></p>
+                  </li>
+                  <%}%>
+              </ul>
+            </b>
+          </p>
+       <% for(var i=0;i<turmeric_powder.length;i++){%>
+          <h2 class="color_red"><%=turmeric_powder[i].heading4%></h2>
+          <%}%>
+          <div class="d-flex">
+            <% for(var i=0;i<quantitydata.length;i++){%>
+              <span class="ml-4 font-weight-bold">
+                  <%=quantitydata[i].quantity%>
+              </span>
+              <%}%>
+          </div>
+  <% for(var i=0;i<turmeric_powder.length;i++){%>
+          <h2 class="color_red">
+            <%=turmeric_powder[i].heading5%>
+          </h2>
+          <%}%>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="image-container">
+      <img
+        src="/images/turmeric11.jpg"
+        alt="First Image"
+        class="first-image"
+      />
+      <img
+        src="/images/redchilly.jpg"
+        alt="Second Image"
+        class="second-image"
+      />
+    </div> -->
+  </section>
+  <%}%>
+
+  <% for(var i=0;i<turmeric_powder.length;i++){%>
+  <div class="container mb-4">
+      <div class="row">
+          <div class="col-md-5 mt-2">
+              <img src="/images/<%=turmeric_powder[i].img3%>" alt="First Image" class="img-fluid" style="height: 300px;width: 100%;">
+          </div>
+          <div class="col-md-7 mt-2">
+              <img src="/images/<%=turmeric_powder[i].img4%>" alt="Second Image" class="img-fluid" style="height: 300px;width: 100%;">
+          </div>
+      </div>
+  </div>
+  <%}%>
+
+
+<%- include("footer.ejs")%>

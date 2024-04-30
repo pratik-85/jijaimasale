@@ -1,0 +1,402 @@
+.top_header{
+    width: 100%;
+    height: 50px;
+    float: left;
+    background-color: red;
+    /* padding-left: 0; */
+}
+.top_header ul{
+    width: 100%;
+    height: auto;
+}
+.top_header ul li{
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+    word-spacing: 0;
+}
+.icon ul li{
+    margin-left: 10px;
+    color: white;
+    font-weight: bold;
+    word-spacing: 0;
+}
+
+@media(max-width:667px){
+    .top_header{
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+    .top_header ul li{
+        margin-left: 5px;
+        display: block;
+    }
+    .icon{
+        display: none;
+    }
+}
+@media (min-width:668px) {
+    .top_header{
+        height: auto;
+    }
+    .icon ul li{
+        margin-left: 5px;
+    }
+}
+
+/* Nav bar */
+.top_nav{
+    width: 100%;
+    /* background-color: green; */
+    height: 100px;
+    float: left;
+}
+.top_nav ul li{
+    z-index: 9999;
+    background-color: #fff;
+}
+@media(max-width:667px){
+    #navbarNav li a{
+        margin-left: 20px;
+    }
+    
+}
+/* .top_nav_logo{
+    width: 50%;
+    float: left;
+    background-color: orange;
+    height: 120px;
+    text-align: center;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+.top_nav_list{
+    width: 50%;
+    float: left;
+    background-color: green;
+    height: 100%;
+} */
+
+
+/* Carousel */
+#carouselExampleFade img{
+    height: 500px;
+    width: 100%;
+}
+@media(max-width:667px){
+    #carouselExampleFade img{
+        height: 300px;
+        width: 100%;
+    }
+}
+
+/* Best Choice */
+.best_choice{
+    width: 100%;
+    float: left;
+    background-color: rgb(187, 186, 186);
+    height: 550px;
+}
+
+
+@media(max-width:667px){
+    .best_choice{
+        height: auto;
+        padding-bottom: 40px;
+    }
+}
+
+.why_choose_img img{
+    margin-top: 25px;
+}
+
+@media(min-width:768px){
+    .best_choice{
+        height: auto;
+        padding-bottom: 50px;
+    }
+    .why_choose_img img{
+        height: 100%;
+        margin-bottom: 25px;
+    }
+    /* .why_choose_img img{
+        height: auto;
+        display: flex;
+        align-items: center;
+    } */
+}
+
+.what_we_do_para{
+    max-width: 62%;
+    margin-left: 21%;
+    text-align: center;
+}
+@media(max-width:667px){
+    .what_we_do_para{
+        max-width: 100%;
+        margin-left: 0%;
+        text-align: justify;
+    }
+}
+
+/* Card Img */
+/* .card_img_height{
+    height: 500px;
+} */
+
+
+.our_services{
+    width: 100%;
+    height: 600px;
+    float: left;
+    background-color: rgb(187, 186, 186);
+}
+.service_card img{
+    filter: grayscale(1);
+}
+.service_card{
+    box-shadow: 0px 0px 50px rgb(49, 46, 46);
+}
+.service_card img:hover{
+    transition: scale .3s ease-in-out;
+    scale: 1.1;
+    overflow: hidden;
+    filter: grayscale(0);
+}
+
+@media(max-width:667px){
+    .our_services{
+        height: auto;
+        padding-bottom: 40px;
+    }
+}
+@media(min-width:678px){
+.our_services{
+    height: auto;
+    padding-bottom: 40px;
+}
+}
+
+/* Footer */
+footer{
+    width: 100%;
+    height: 590px;
+    float: left;
+    background-color: red;
+}
+footer .footer_text p{
+    margin-top: 50px;
+    /* padding-bottom: 50px; */
+}
+
+
+.address_text{
+    font-weight: bold;
+    color: white;
+    text-align: justifys;
+}
+.copy_right{
+    color: white;
+    /* font-weight: bold; */
+}
+@media(max-width:667px){
+    footer{
+        height: auto;
+    }
+    .copy_right{
+        text-align: center;
+    }
+}
+@media(min-width:768px){
+    footer{
+        height: auto;
+    }
+}
+
+
+/* Available Packaging */
+.availabel_packaging{
+    list-style-type: none;
+}
+.availabel_packaging li{
+    display: inline-block;
+    margin-left: 0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 
+body{
+    background-color: black;
+} */
+
+.header_wrapper .navbar{
+    padding: 5px 0;
+    transition: all .2s linear;
+        /* background-color: rgba(36, 89, 3, 0.5); Adjust the RGBA values for your desired color and opacity */
+        /* background-color: white; */
+    
+}
+/* .header_wrapper .navbar{
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+    width: 100%;
+} */
+
+.header_wrapper .navbar-toggler{
+    border: 0;
+    /* color: white; */
+    line-height: 2;
+}
+
+.header_wrapper .navbar-toggler{
+    border: 0;
+    /* color: white; */
+    line-height: 2;
+}
+
+.header_wrapper .navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.navbar-brand img{
+    max-width: 100px;
+    height: auto;
+    background-color: white;
+}
+
+.navbar-brand .img-fluid{
+    padding: 0;
+    height: 80px;
+}
+
+.header_wrapper .nav-item{
+    margin: 0 10px;
+}
+
+.header_wrapper .nav-item .nav-link{
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    /* color: rgb(210, 207, 207); */
+    color: black;
+}
+
+/* .header_wrapper .nav-item .nav-link::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: orangered;
+    transition: 0.2s;
+    bottom: 0;
+} */
+
+/* .header_wrapper .nav-item .nav-link.active::after,
+.header_wrapper .nav-item .nav-link:hover::after{
+    width: 100%;
+    
+} */
+
+.header_wrapper .nav-item .nav-link.active,
+.header_wrapper .nav-item .nav-link:hover{
+/* color: white; */
+color: darkgreen;
+}
+
+.header-scrolled{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:black;
+    box-shadow: 0 4px 6px 0 rgba(12, 0, 46, .05);
+}
+
+.header-scrolled .nav-item .nav-link.active,
+.header-scrolled .nav-item .nav-link:hover{
+color: red;
+}
+
+
+/* About Page */
+.founder-card {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+  }
+
+  .founder-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .story-section p {
+    margin-bottom: 20px;
+  }
+  .name_d {
+    color: green;
+  }
+  .font-family {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  /* Red Chilli */
+  .image-container {
+    display: flex;
+    justify-content: center;
+    /* Center images horizontally */
+    align-items: center;
+    /* Center images vertically */
+}
+
+.first-image {
+    max-width: 25%;
+    height: auto;
+}
+
+.second-image {
+    max-width: 65%;
+    height: auto;
+    margin-left: 20px;
+    /* Adjust spacing between images */
+}
+
+.color_red {
+    color: red;
+}
+
+.font-family {
+    font-family: verdana
+}
+
+@media(max-width:667px) {
+    h3 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+}
+
+@media (max-width: 668px) {
+  .kitchen {
+    width: 150px !important;
+    height: 100px !important;
+  }
+}

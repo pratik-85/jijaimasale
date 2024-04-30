@@ -1,0 +1,107 @@
+<%- include("navbar.ejs")%>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-12 p-0">
+            <h2 class="alert alert-success font-weight-bold p-4 text-center">Chicken Masala</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <% for(var i=0;i<chicken_masala.length;i++){%>
+        <div class="col-md-12 mt-4 border shadow p-0 mb-4">
+            <img src="/images/<%=chicken_masala[i].banner_img%>" class="w-100 pl-4 pt-4 pr-4 pb-2"
+                style="height: auto;">
+        </div>
+        <%}%>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <% for(var i=0;i<chicken_masala.length;i++){%>
+        <div class="col-xl-6 col-lg-12 col-md-12 mt-4 border shadow p-0 mb-5">
+            <img src="/images/<%=chicken_masala[i].img1%>"
+                class="img-thumbnail h-100">
+        </div>
+        <%}%>
+        <div class="col-xl-6 col-lg-12 col-md-12 mt-4 border shadow p-0 mb-5">
+        <% for(var i=0;i<chicken_masala.length;i++){%>
+            <p class="font-weight-bold p-3 border-bottom"><%=chicken_masala[i].about_description%></p>
+            <p class="font-weight-bold p-3 border-bottom"><%=chicken_masala[i].about_description%></p>
+            <p class="font-weight-bold p-3 border-bottom"><%=chicken_masala[i].about_description%></p>
+                <%}%>
+            <!-- <p class="font-weight-bold p-3 border-bottom">We are Manufacturer and Trading Company in Spices. We
+                Provides Different Types of Spices to various Sectors. We have original Taste in Spices , Our Taste
+                maker will make your food more tasty by simply using in right quantity. We have our unique taste for
+                each products this taste will never be match to any other taste.
+
+            <p class="font-weight-bold p-3">Our Attention To Detail, Tough Quality Control And 12 Years Of
+                Experience Has Earned Us A Wide Variety Of Clients From All Around The World</p>
+
+            </p> -->
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <% for(var i=0;i<chicken_masala.length;i++){%>
+        <div class="col-xl-4 col-lg-6 col-md-12 border shadow p-0">
+            <img src="/images/<%=chicken_masala[i].img1%>" class="w-100 p-4 h-100">
+        </div>
+        <%}%>
+
+        <div class="col-xl-8 col-lg-6 col-md-12 pl-4">
+        <% for(var i=0;i<chicken_masala.length;i++){%>
+            <h3 class="text-danger font-weight-bold mt-3"><%=chicken_masala[i].heading1%></h3>
+            <p class="font-weight-bold mt-3"><%=chicken_masala[i].description1%></p>
+
+            <h3 class="text-danger font-weight-bold mt-3"><%=chicken_masala[i].heading2%></h3>
+            <%}%>
+            <% for(var i=0;i<description.length;i++){%>
+                <p class="font-weight-bold mt-3"><%=description[i].description%></p>
+                <%}%>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row">
+        <% for(var i=0;i<chicken_masala.length;i++){%>
+        <div class="col-xl-4 col-lg-6 col-md-12 shadow border p-0 mt-5">
+            <img src="/images/<%=chicken_masala[i].img3%>" class="w-100 p-4 h-100">
+        </div>
+        <%}%>
+        <div class="col-xl-8 col-lg-6 col-md-12 pl-4 mt-4">
+        <% for(var i=0;i<chicken_masala.length;i++){%>
+            <h3 class="text-danger font-weight-bold mt-3"><%=chicken_masala[i].heading3%></h3>
+            <%}%>
+            <% for(var i=0;i<specificationdata.length;i++){%>
+            <p class="font-weight-bold mt-3"><%=specificationdata[i].specification%></p>
+            <%}%>
+        <% for(var i=0;i<chicken_masala.length;i++){%>
+            <h3 class="text-danger font-weight-bold mt-4 mb-4"><%=chicken_masala[i].heading4%></h3>
+            <%}%>
+            <div class=" d-flex">
+            <% for(var i=0;i<quantitydata.length;i++){%>
+                <span class="ml-4 font-weight-bold"><%=quantitydata[i].quantity%></span>
+               <%}%> 
+            </div>
+        <% for(var i=0;i<chicken_masala.length;i++){%>
+            <h4 class="text-danger font-weight-bold mt-4"><%=chicken_masala[i].heading5%>
+            </h4>
+            <%}%>
+        <% for(var i=0;i<chicken_masala.length;i++){%>
+            <img src="/images/<%=chicken_masala[i].img4%>" class="w-100 mt-4"
+                style="height: 300px;">
+                <%}%>
+        </div>
+    </div>
+</div>
+
+
+<%- include("footer.ejs")%>

@@ -1,0 +1,79 @@
+<%- include("../../navbar.ejs")%>
+<style>
+   .heading {
+       background-image: linear-gradient(45deg, #44CE42 70%, #f34040 30%);
+       padding-top: 5px;
+       padding-bottom: 5px;
+       padding-left: 5px;
+       color: white;
+   }
+</style>
+
+<form action="./update_products" enctype="multipart/form-data" method="post">
+    <div class="container-fluid p-5 bg-white">
+        <div class="row">
+         <div class="col-md-12">
+            <h2 class="heading">Edit Kanda Lasun Info</h2>
+         </div>
+         <div class="col-md-2">
+            Heading1
+            <input type="text"  name="heading1" class="form-control border-dark"  value="<%=data[0].heading1%>">
+         </div>
+         <div class="col-md-2">
+            Heading2
+            <input type="text"  name="heading2" class="form-control border-dark"  value="<%=data[0].heading2%>">
+         </div>
+         <div class="col-md-2">
+            Heading3
+            <input type="text"  name="heading3" class="form-control border-dark"  value="<%=data[0].heading3%>">
+         </div>
+         <div class="col-md-3">
+            Heading4
+            <input type="text"  name="heading4" class="form-control border-dark"  value="<%=data[0].heading4%>">
+         </div>
+         <div class="col-md-3">
+            Heading5
+            <input type="text"  name="heading5" class="form-control border-dark"  value="<%=data[0].heading5%>">
+         </div>
+         <div class="col-md-12">
+            Discription1
+            <input type="text"  name="description1" class="form-control border-dark"  value="<%=data[0].description1%>">
+         </div>
+            <div class="col-md-4">
+                Banner Img
+                <input type="file" name="banner_img" class="form-control border-dark"  value="<%=data[0].banner_img%>">
+                <br>
+                <img src="/images/<%=data[0].banner_img%>" width="200px" height="100px">
+
+                <input type="hidden" name="kanda_lasun_masala_products_id" class="form-control border-dark" value="<%=data[0].kanda_lasun_masala_products_id%>">
+            </div>
+        
+           
+            <div class="col-md-4">
+                About Img1
+                <input type="file" name="img1" class="form-control border-dark"  value="<%=data[0].img1%>"> <br>
+                <img src="/images/<%=data[0].img1%>" width="200px" height="100px">
+             </div>
+             <div class="col-md-4">
+                About Img2
+                <input type="file" name="img2" class="form-control border-dark"  value="<%=data[0].img2%>"> <br>
+                <img src="/images/<%=data[0].img2%>" width="200px" height="100px">
+             </div>
+             <!-- <div class="col-md-6"></div> -->
+             <div class="col-md-6">
+                About Img3
+                <input type="file" name="img3" class="form-control border-dark"  value="<%=data[0].img3%>"> <br>
+                <img src="/images/<%=data[0].img3%>" width="200px" height="100px">
+             </div>
+             <div class="col-md-6">
+                About Img4
+                <input type="file" name="img4" class="form-control border-dark"  value="<%=data[0].img4%>"> <br>
+                <img src="/images/<%=data[0].img4%>" width="200px" height="100px">
+             </div>
+            <div class="col-md-12 mt-5 text-center">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+<%- include("../../footer.ejs")%>

@@ -1,0 +1,79 @@
+<%- include("../../navbar.ejs")%>
+<style>
+    .heading {
+        background-image: linear-gradient(45deg, #44CE42 70%, #f34040 30%);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        color: white;
+    }
+</style>
+
+    <form action="./save_our_products" enctype="multipart/form-data" method="post">
+        <div class="container-fluid p-5 bg-white">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading font-weight-bold">Add Product</h2>
+                </div>
+                <div class="col-md-6">
+                    Heading
+                    <input type="text" name="heading1" class="form-control border-dark">
+                </div>
+                <div class="col-md-6">
+                    Img
+                    <input type="file" name="img1" class="form-control border-dark">
+                </div>  
+                <div class="col-md-12 mt-5 text-center">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+        <br>
+        <div class="container-fluid p-5 p-lg-5 bg-white border">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="heading">Product List</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <tr>
+                                <th>ACTION</th>
+                                <th>SR.NO</th>
+                                <th>Img</th>
+                                <th>Heading</th>
+                            </tr>
+
+                            <% data.forEach((val,i)=>{%>
+
+                                <tr class="text-black">
+                                    <td>
+                                        <a href="/admin/products/Our_Products/edit_products/<%=val.our_products_id%>">
+                                            <button class="btn btn-success">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                        </a>
+                                        <a href="/admin/products/Our_Products/delete_products/<%=val.our_products_id%>">
+                                            <button onclick="return confirm('are you sure')" class="btn btn-danger">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <%= i+1%>
+                                    </td>
+                                   
+                                    <td><img src="/images/<%=val.img1%>" class="img-fluid rounded-0 w-100"></td>
+                                  
+                                    <td>
+                                        <%=val.heading1%>
+                                    </td>
+                                    
+                                </tr>
+                                <%}) %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include("../../footer.ejs")%>
